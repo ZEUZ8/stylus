@@ -1,5 +1,7 @@
+"use client"
 import Image from "next/image";
 import StatsSection from "@/components/user/StatsSection"
+import TrustSection from "@/components/user/TrustSection"
 
 export default function Home() {
   return (
@@ -74,17 +76,18 @@ export default function Home() {
                 className="absolute inset-6 -z-10 rounded-[3rem] bg-primary/10 blur-2xl"
               />
               <img
-                // src={heroIllustration}
+                src={"bg.png"}
                 width={1280}
                 height={1088}
                 alt="Illustration of an online tutor teaching on a video call while two students learn on a laptop and tablet, surrounded by books, a graduation cap, an achievement badge and a growth chart"
-                className="h-auto w-full drop-shadow-xl"
+                className=" h-auto w-full drop-shadow-xl"
               />
             </div>
           </div>
         </div>
       </section>
       <StatsSection />
+      <TrustSection/>
     </>
   );
 }

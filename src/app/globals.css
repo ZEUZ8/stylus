@@ -8,6 +8,7 @@
     --shadow-lift: 0 2px 4px oklch(0.42 0.196 265.6 / 0.06), 0 28px 60px -20px oklch(0.42 0.196 265.6 / 0.28);
 }
 
+
 /*@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -30,10 +31,15 @@ body {
 
 .glass-card {
   /* background-color: color-mix(in oklab, var(--card) 72%, transparent); */
-  background-color: rgb(209, 209, 255);
+  background-color: rgb(255, 255, 255);
   backdrop-filter: blur(16px);
   /* border: 1px solid color-mix(in oklab, var(--border) 80%, transparent); */
-  border: 1px solid color-mix(in oklab, black 80%, transparent);
+  border: 1px solid color-mix(in oklab, rgb(159, 159, 159) 80%, transparent);
   /* box-shadow: var(--shadow-soft); */
-  box-shadow: pink;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
+
+.glass-card:hover{
+  box-shadow: var(--shadow-lift);
+}
+
