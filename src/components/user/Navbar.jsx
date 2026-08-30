@@ -58,9 +58,10 @@ const Navbar = () => {
             {/* <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-brand-gradient text-sm font-extrabold text-primary-foreground">
                 S
               </span> */}
-            <span className="truncate text-lg font-extrabold tracking-tight">
-              STYLUS
+            <span className="truncate text-lg font-extrabold tracking-tight h-[7rem] w-[7rem] m-5">
+              <img src="/logo.png" alt="stylus_logo" /> 
             </span>
+            
           </a>
 
           <nav aria-label="Main" className="ml-auto hidden lg:block">

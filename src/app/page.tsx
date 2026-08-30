@@ -2,6 +2,9 @@
 import Image from "next/image";
 import StatsSection from "@/components/user/StatsSection"
 import TrustSection from "@/components/user/TrustSection"
+import AboutSection from "@/components/user/AboutSection"
+import CourseSection from "@/components/user/CourseSection"
+import Testimonials from "@/components/user/Testimonials"
 
 export default function Home() {
   return (
@@ -87,6 +90,9 @@ export default function Home() {
         </div>
       </section>
       <StatsSection />
+      <AboutSection/>
+      <CourseSection/>
+      <Testimonials/>
       <TrustSection/>
     </>
   );
