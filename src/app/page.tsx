@@ -5,6 +5,8 @@ import TrustSection from "@/components/user/TrustSection"
 import AboutSection from "@/components/user/AboutSection"
 import CourseSection from "@/components/user/CourseSection"
 import Testimonials from "@/components/user/Testimonials"
+import ContactSection from "@/components/user/ContactSection"
+import SiteFooter from "@/components/user/SiteFooter"
 
 export default function Home() {
   return (
@@ -94,6 +96,8 @@ export default function Home() {
       <CourseSection/>
       <Testimonials/>
       <TrustSection/>
+      <ContactSection/>
+      <SiteFooter/>
     </>
   );
 }
