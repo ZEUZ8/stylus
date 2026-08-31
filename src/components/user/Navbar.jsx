@@ -43,13 +43,13 @@ const Navbar = () => {
 
   return (
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500",${
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ",${
           scrolled
             ? "border-b border-border/70 bg-background/85 backdrop-blur-xl shadow-soft"
             : "border-b border-transparent bg-transparent"}
         `}
       >
-        <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-5 sm:h-20 sm:px-8">
+        <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-5 sm:h-20 sm:px-8 m-3">
           <a
             href="#home"
             className="flex min-w-0 items-center gap-2.5 rounded-md focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
@@ -58,7 +58,7 @@ const Navbar = () => {
             {/* <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-brand-gradient text-sm font-extrabold text-primary-foreground">
                 S
               </span> */}
-            <span className="truncate text-lg font-extrabold tracking-tight h-[7rem] w-[7rem] m-5">
+            <span className="truncate text-lg font-extrabold tracking-tight h-28 w-28 ">
               <img src="/logo.png" alt="stylus_logo" /> 
             </span>
             
@@ -70,7 +70,7 @@ const Navbar = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="rounded-full px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+                    className="rounded-full px-4 py-2 text-sm font font-normal text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
                   >
                     {link.label}
                   </a>
@@ -83,7 +83,7 @@ const Navbar = () => {
             <button
               asChild
               size="lg"
-              className="hidden rounded-full sm:inline-flex"
+              className="hidden rounded-full sm:inline-flex text-muted-foreground text-sm"
             >
               <a href="#demo">Book Demo</a>
             </button>

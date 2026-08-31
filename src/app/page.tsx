@@ -91,7 +91,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <StatsSection />
+      {/* <StatsSection /> */}
       <AboutSection/>
       <CourseSection/>
       <Testimonials/>
