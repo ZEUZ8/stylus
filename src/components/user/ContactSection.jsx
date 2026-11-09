@@ -1,8 +1,9 @@
-import React from "react";
+"use client";
 
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 
-// import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/buttons";
+import { FloatingCircles } from "@/components/ui/FloatingCircles";
 
 const DETAILS = [
   { icon: Phone, label: "Call or WhatsApp", value: "+91 98765 43210" },
@@ -18,25 +19,32 @@ const DETAILS = [
     value: "Online worldwide · Studio in Kochi, India",
   },
 ];
-const ContactSection = () => {
+
+export default function ContactSection() {
   return (
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="bg-secondary/40 py-20 sm:py-28"
+      className="relative isolate bg-secondary/40 py-20 sm:py-28"
     >
+      <FloatingCircles flip />
+
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+          
+          {/* Contact information */}
           <div>
-            <span className="text-xs font-semibold tracking-[0.2em] text-[#4DA8BB] uppercase">
+            <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase">
               Contact
             </span>
+
             <h2
               id="contact-heading"
               className="mt-4 text-3xl font-extrabold tracking-tight text-balance sm:text-4xl"
             >
               Book your free demo class
             </h2>
+
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
               Tell us the subject and goal. We'll suggest a tutor and a time
               within one working day — no card required and no obligation after
@@ -46,15 +54,24 @@ const ContactSection = () => {
             <ul className="mt-9 grid gap-4">
               {DETAILS.map((item) => {
                 const Icon = item.icon;
+
                 return (
-                  <li key={item.label} className="flex items-start gap-3.5">
-                    <span className="grid size-10 shrink-0 place-items-center rounded-full bg-[#4DA8BB]/10 text-[#4DA8BB]">
-                      <Icon className="size-4" aria-hidden />
+                  <li
+                    key={item.label}
+                    className="flex items-start gap-3.5"
+                  >
+                    <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary">
+                      <Icon
+                        className="size-4"
+                        aria-hidden="true"
+                      />
                     </span>
+
                     <div>
-                      <p className="text-xs font-light tracking-wide text-muted-foreground uppercase">
+                      <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
                         {item.label}
                       </p>
+
                       <p className="mt-0.5 text-sm font-semibold text-foreground">
                         {item.value}
                       </p>
@@ -65,13 +82,18 @@ const ContactSection = () => {
             </ul>
           </div>
 
+          {/* Contact form */}
           <div className="rounded-3xl border border-border bg-card p-6 shadow-soft sm:p-8">
-            <form className="grid gap-5" onSubmit={(e) => e.preventDefault()}>
+            <form
+              className="grid gap-5"
+              onSubmit={(e) => e.preventDefault()}
+            >
               <div className="grid gap-5 sm:grid-cols-2">
                 <div className="grid gap-2">
                   <label htmlFor="c-name" className="text-sm font-semibold">
                     Your name
                   </label>
+
                   <input
                     id="c-name"
                     name="name"
@@ -82,10 +104,12 @@ const ContactSection = () => {
                     className="h-11 rounded-xl border border-input bg-background px-3.5 text-sm outline-none transition-colors focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-ring/30"
                   />
                 </div>
+
                 <div className="grid gap-2">
                   <label htmlFor="c-phone" className="text-sm font-semibold">
                     Phone
                   </label>
+
                   <input
                     id="c-phone"
                     name="phone"
@@ -102,6 +126,7 @@ const ContactSection = () => {
                 <label htmlFor="c-email" className="text-sm font-semibold">
                   Email
                 </label>
+
                 <input
                   id="c-email"
                   name="email"
@@ -115,9 +140,13 @@ const ContactSection = () => {
 
               <div className="grid gap-5 sm:grid-cols-2">
                 <div className="grid gap-2">
-                  <label htmlFor="c-subject" className="text-sm font-semibold">
+                  <label
+                    htmlFor="c-subject"
+                    className="text-sm font-semibold"
+                  >
                     Subject
                   </label>
+
                   <select
                     id="c-subject"
                     name="subject"
@@ -131,10 +160,15 @@ const ContactSection = () => {
                     <option>Coding &amp; CS</option>
                   </select>
                 </div>
+
                 <div className="grid gap-2">
-                  <label htmlFor="c-grade" className="text-sm font-semibold">
+                  <label
+                    htmlFor="c-grade"
+                    className="text-sm font-semibold"
+                  >
                     Grade / level
                   </label>
+
                   <input
                     id="c-grade"
                     name="grade"
@@ -146,9 +180,13 @@ const ContactSection = () => {
               </div>
 
               <div className="grid gap-2">
-                <label htmlFor="c-message" className="text-sm font-semibold">
+                <label
+                  htmlFor="c-message"
+                  className="text-sm font-semibold"
+                >
                   What would you like help with?
                 </label>
+
                 <textarea
                   id="c-message"
                   name="message"
@@ -158,19 +196,14 @@ const ContactSection = () => {
                 />
               </div>
 
-              {/* <Button
+              <Button
                 type="submit"
                 size="lg"
                 className="h-12 w-full rounded-full text-base"
               >
                 Request my free demo
-              </Button> */}
-              <button
-                onClick={()=>{console.log("clicked the button")}}
-                className="p-4 bg-[#4DA8BB] rounded-full text-white cursor-pointer hover:bg-[#4DA8BB]/80"
-              >
-                Book Free Demo
-              </button>
+              </Button>
+
               <p className="text-center text-xs text-muted-foreground">
                 We reply within one working day. Your details are never shared.
               </p>
@@ -180,6 +213,4 @@ const ContactSection = () => {
       </div>
     </section>
   );
-};
-
-export default ContactSection;
+}

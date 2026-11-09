@@ -1,5 +1,13 @@
-import React from 'react'
-import { CheckCircle2, HeartHandshake, ShieldCheck, Target } from "lucide-react";
+"use client";
+
+import {
+  CheckCircle2,
+  HeartHandshake,
+  ShieldCheck,
+  Target,
+} from "lucide-react";
+
+import { FloatingCircles } from "@/components/ui/FloatingCircles";
 
 const PILLARS = [
   {
@@ -26,50 +34,73 @@ const HIGHLIGHTS = [
   "Recorded sessions for revision anytime",
 ];
 
-
-const AboutSection = () => {
+export default function AboutSection() {
   return (
-   <section id="about" aria-labelledby="about-heading" className="bg-background py-20 sm:py-28">
+    <section
+      id="about"
+      aria-labelledby="about-heading"
+      className="relative isolate bg-background py-20 sm:py-28"
+    >
+      <FloatingCircles flip />
+
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-start lg:gap-20">
+          
+          {/* Left content */}
           <div>
-            <span className="text-xs font-bold tracking-[0.2em] text-[#4DA8BB] uppercase">
+            <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase">
               About Stylus
             </span>
+
             <h2
               id="about-heading"
               className="mt-4 text-3xl font-extrabold tracking-tight text-balance sm:text-4xl"
             >
               Tutoring built around the student, not the syllabus.
             </h2>
+
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Stylus began with a simple observation: students don't struggle because they aren't
-              capable — they struggle because classrooms move faster than understanding. We pair
-              every learner with an educator who teaches at their pace, in their language, with
+              Stylus began with a simple observation: students don't struggle
+              because they aren't capable — they struggle because classrooms
+              move faster than understanding. We pair every learner with an
+              educator who teaches at their pace, in their language, with
               measurable checkpoints along the way.
             </p>
+
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {HIGHLIGHTS.map((item) => (
-                <li key={item} className="flex items-start gap-2.5 text-sm text-foreground">
-                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[#4DA8BB]" aria-hidden />
+                <li
+                  key={item}
+                  className="flex items-start gap-2.5 text-sm text-foreground"
+                >
+                  <CheckCircle2
+                    className="mt-0.5 size-4 shrink-0 text-primary"
+                    aria-hidden="true"
+                  />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
+          {/* Right pillar cards */}
           <ul className="grid gap-4">
             {PILLARS.map((pillar) => {
               const Icon = pillar.icon;
+
               return (
                 <li
                   key={pillar.title}
                   className="group rounded-3xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lift sm:p-7"
                 >
-                  <span className="grid size-11 place-items-center rounded-full bg-[#4DA8BB]/10 text-[#4DA8BB] transition-colors duration-300 group-hover:bg-[#4DA8BB] group-hover:text-white">
-                    <Icon className="size-5" aria-hidden />
+                  <span className="grid size-11 place-items-center rounded-2xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+                    <Icon className="size-5" aria-hidden="true" />
                   </span>
-                  <h3 className="mt-5 text-lg font-bold">{pillar.title}</h3>
+
+                  <h3 className="mt-5 text-lg font-bold">
+                    {pillar.title}
+                  </h3>
+
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {pillar.body}
                   </p>
@@ -77,12 +108,9 @@ const AboutSection = () => {
               );
             })}
           </ul>
+
         </div>
       </div>
     </section>
-  )
+  );
 }
-
-export default AboutSection
-
-
