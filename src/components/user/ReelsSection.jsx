@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { FaInstagram } from "react-icons/fa";
 import {
   ChevronLeft,
   ChevronRight,
@@ -293,7 +294,7 @@ export default function ReelsSection() {
                 />
               </div>
 
-              <p
+              {/* <p
                 className={`mt-4 text-center text-xs transition-colors sm:text-sm ${
                   active === i
                     ? "font-semibold text-foreground"
@@ -313,14 +314,14 @@ export default function ReelsSection() {
                 >
                   Watch on Instagram
                 </a>
-              </p>
+              </p> */}
             </div>
           ))}
         </div>
       </div>
 
       {/* Navigation buttons */}
-      <div className="mt-2 flex items-center justify-center gap-3">
+      {/* <div className="mt-2 flex items-center justify-center gap-3">
         <button
           type="button"
           onClick={() =>
@@ -352,7 +353,7 @@ export default function ReelsSection() {
             aria-hidden="true"
           />
         </button>
-      </div>
+      </div> */}
 
       {/* Instagram link */}
       <div className="mt-10 flex justify-center px-5">
@@ -363,7 +364,7 @@ export default function ReelsSection() {
           className="inline-flex items-center gap-2 rounded-full bg-brand-gradient px-7 py-3 text-sm font-bold text-primary-foreground shadow-soft transition-transform hover:scale-[1.03]"
         >
           Follow us on Instagram
-          <Send
+          <FaInstagram
             className="size-4"
             aria-hidden="true"
           />
